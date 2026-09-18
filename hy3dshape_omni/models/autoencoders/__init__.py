@@ -1,0 +1,1 @@
+from .shape_vae import ShapeVAE, Latent2MeshOutput

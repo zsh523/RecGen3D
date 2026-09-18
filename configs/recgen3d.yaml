@@ -1,0 +1,99 @@
+# RecGen3D: Reconstruction-Guided 3D Generation in a Shared Canonical Space
+# Inference configuration (Stage-1 VGGT reconstruction + Stage-2 VecSet diffusion).
+#
+# Backbone : HunyuanDiT flow matching
+# VAE      : 4096-token VecSet (Hunyuan3D-Omni)
+# Encoder  : DINOv2-Large, 518px input
+#
+# Weights resolved as follows:
+#   * `tencent/Hunyuan3D-Omni`  -> downloaded automatically from the HuggingFace Hub
+#                                  into $HY3DGEN_MODELS (see scripts/download_weights.sh)
+#   * `vggt_config.pretrained`  -> RecGen3D Stage-1 canonical VGGT checkpoint
+#   * the full RecGen3D checkpoint is supplied on the command line via `--ckpt`
+
+model:
+  target: hy3dshape_omni.models.diffusion.flow_matching_sit.Diffuser
+  params:
+    z_scale_factor: 1.0039506158752403
+    # canonical-space normalisation of the batch; the method depends on it
+    normalize_batch: true
+
+    # LoRA adapters over the Hunyuan3D-Omni DiT. The released checkpoint stores
+    # exactly these weights, so the shapes here must not change.
+    lora_config:
+      rank: 64
+      target_modules: ["to_q", "to_k", "to_v", "out_proj", "fc1", "fc2"]
+
+    # ---- Stage 1: generation-compatible feed-forward reconstruction ----
+    vggt_enable: true
+    # latent-augmented multi-view conditioning (the RecGen3D setting)
+    vggt_mode: "encoder-vggtpcl-multiview"
+    # condition on all four aggregator layers rather than the last one only
+    intermediate_layer_enabled: true
+
+    vggt_config:
+      target: vggt.models.vggt.VGGT
+      params:
+        embed_dim: 1024
+        img_size: 518
+        patch_size: 14
+        cross_attn_enabled: true
+        wan_style_timestep_modulation: true
+        HY_camera_token: false
+      # Stage-1 canonical VGGT weights. Relative paths are resolved against the
+      # repository root; override with --vggt_pretrained.
+      pretrained: "pretrained_weights/recgen3d/vggt_canonical.safetensors"
+      vggt_loss_enable: false
+      frozen_module_names: null
+      keep_patterns: null
+
+    # ---- Stage 2: reconstruction-guided controllable generation ----
+    first_stage_config:
+      target: hy3dshape_omni.models.autoencoders.ShapeVAE
+      from_pretrained: tencent/Hunyuan3D-Omni
+
+    cond_stage_config:
+      target: hy3dshape_omni.models.conditioners.omni_encoder.OmniEncoder
+      from_pretrained: tencent/Hunyuan3D-Omni
+
+    denoiser_cfg:
+      target: hy3dshape_omni.models.denoisers.hunyuandit.HunYuanDiTPlain
+      from_pretrained: tencent/Hunyuan3D-Omni
+      params:
+        vggt_feature_fusion_enabled: false
+        wan_style_timestep_modulation: false
+      frozen_module_names: null
+      keep_patterns: null
+
+    scheduler_cfg:
+      transport:
+        target: hy3dshape_omni.models.diffusion.transport.create_transport
+        params:
+          path_type: Linear
+          prediction: velocity
+          train_sample_type: logit_normal
+          mean: 0
+          std: 1.0
+          shift_scale: 0.125
+      sampler:
+        target: hy3dshape_omni.models.diffusion.transport.Sampler
+        params: {}
+        ode_params:
+          sampling_method: euler
+          num_steps: 50
+
+    pipeline_cfg:
+      target: hy3dshape_omni.pipelines.Hunyuan3DDiTFlowMatchingPipeline
+
+    image_processor_cfg:
+      target: hy3dshape_omni.preprocessors.ImageProcessorV2
+      params: {}
+
+# ---- inference defaults (override on the command line) ----
+inference:
+  num_inference_steps: 50
+  guidance_scale: 5.0
+  octree_resolution: 384
+  mc_level: 0.0
+  num_chunks: 8000
+  seed: 0

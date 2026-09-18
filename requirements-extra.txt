@@ -1,0 +1,9 @@
+# RecGen3D — optional extras.
+#
+# Not needed to generate meshes. Install these only for the features noted.
+
+# scripts/preprocess_images.py — background removal for your own photographs.
+# BiRefNet is fetched from the HuggingFace Hub; its remote code imports kornia.
+kornia==0.8.2
+# only needed to read iPhone .HEIC files
+pillow-heif==1.7.0

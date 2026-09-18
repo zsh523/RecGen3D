@@ -1,0 +1,24 @@
+# RecGen3D — conda environment.
+#
+#   conda env create -f environment.yml
+#   conda activate recgen3d
+#
+# PyTorch and torch-cluster come from their own CUDA-matched indices. The `+cu121`
+# local tags are load-bearing: plain `torch==2.5.1` on PyPI is the cu124 build, which
+# is ABI-incompatible with the cu121 torch-cluster wheel below.
+# Run this from the repository root (the `-r requirements.txt` below is relative).
+# `bash install.sh` does the same thing with more checking.
+
+name: recgen3d
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.5.1+cu121
+      - torchvision==0.20.1+cu121
+      - -f https://data.pyg.org/whl/torch-2.5.1+cu121.html
+      - torch-cluster==1.6.3
+      - -r requirements.txt

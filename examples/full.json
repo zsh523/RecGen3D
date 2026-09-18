@@ -1,0 +1,315 @@
+{
+  "infer_list": [
+    {
+      "name": "nail-clipper",
+      "folder_path": "nail-clipper",
+      "image_names": [
+        "view_00.png",
+        "view_01.png"
+      ]
+    },
+    {
+      "name": "race-car",
+      "folder_path": "race-car",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "anime-figure",
+      "folder_path": "anime-figure",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png",
+        "view_04.png"
+      ]
+    },
+    {
+      "name": "mosaic-house",
+      "folder_path": "mosaic-house",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "colosseum",
+      "folder_path": "colosseum",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "lego-car",
+      "folder_path": "lego-car",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "phone-stand",
+      "folder_path": "phone-stand",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "backpack",
+      "folder_path": "backpack",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "car",
+      "folder_path": "car",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "mech",
+      "folder_path": "mech",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "plant",
+      "folder_path": "plant",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "spaceship",
+      "folder_path": "spaceship",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "red-sculpture",
+      "folder_path": "red-sculpture",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "bike",
+      "folder_path": "bike",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "statue",
+      "folder_path": "statue",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "brick-kart",
+      "folder_path": "brick-kart",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "bull",
+      "folder_path": "bull",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png",
+        "view_04.png",
+        "view_05.png",
+        "view_06.png",
+        "view_07.png",
+        "view_08.png",
+        "view_09.png",
+        "view_10.png",
+        "view_11.png",
+        "view_12.png",
+        "view_13.png",
+        "view_14.png",
+        "view_15.png",
+        "view_16.png",
+        "view_17.png",
+        "view_18.png",
+        "view_19.png"
+      ]
+    },
+    {
+      "name": "dog",
+      "folder_path": "dog",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png",
+        "view_04.png",
+        "view_05.png",
+        "view_06.png",
+        "view_07.png",
+        "view_08.png",
+        "view_09.png",
+        "view_10.png",
+        "view_11.png",
+        "view_12.png",
+        "view_13.png",
+        "view_14.png"
+      ]
+    },
+    {
+      "name": "lego",
+      "folder_path": "lego",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png",
+        "view_04.png",
+        "view_05.png",
+        "view_06.png",
+        "view_07.png",
+        "view_08.png",
+        "view_09.png",
+        "view_10.png",
+        "view_11.png",
+        "view_12.png",
+        "view_13.png",
+        "view_14.png",
+        "view_15.png"
+      ]
+    },
+    {
+      "name": "chibi-figure",
+      "folder_path": "chibi-figure",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png",
+        "view_04.png",
+        "view_05.png",
+        "view_06.png",
+        "view_07.png"
+      ]
+    },
+    {
+      "name": "penguin-plush",
+      "folder_path": "penguin-plush",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png"
+      ]
+    },
+    {
+      "name": "robot",
+      "folder_path": "robot",
+      "image_names": [
+        "view_00.png",
+        "view_01.png"
+      ]
+    },
+    {
+      "name": "sponge-plush",
+      "folder_path": "sponge-plush",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "baby-walker",
+      "folder_path": "baby-walker",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png"
+      ]
+    },
+    {
+      "name": "kids-chair",
+      "folder_path": "kids-chair",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png"
+      ]
+    },
+    {
+      "name": "flower",
+      "folder_path": "flower",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png",
+        "view_04.png",
+        "view_05.png",
+        "view_06.png",
+        "view_07.png"
+      ]
+    },
+    {
+      "name": "monkey",
+      "folder_path": "monkey",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    }
+  ]
+}

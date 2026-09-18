@@ -1,0 +1,36 @@
+# ---- local-only working material (never published) ----
+_local/
+
+# ---- weights / large artifacts ----
+pretrained_weights/
+*.ckpt
+*.safetensors
+*.pth
+*.pt
+*.onnx
+
+# ---- example data (downloaded, not vendored) ----
+examples/data/
+examples/*.zip
+
+# ---- outputs ----
+outputs/
+output_folder*/
+*.log
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ---- editors / os ----
+.vscode/
+.idea/
+.DS_Store

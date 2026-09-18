@@ -1,0 +1,14 @@
+{
+  "infer_list": [
+    {
+      "name": "brick-kart",
+      "folder_path": "brick-kart",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    }
+  ]
+}
