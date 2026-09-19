@@ -231,16 +231,6 @@ vendors code from two upstream projects, both of which restrict use to non-comme
 research. Read the agreements in [`LICENSES/`](LICENSES/) before using the code or the
 weights.
 
-| What | Governed by |
-| --- | --- |
-| `vggt/` | [VGGT License v1](LICENSES/VGGT-LICENSE.txt) — research use only, with an Acceptable Use Policy |
-| `hy3dshape_omni/` | [Tencent Hunyuan3D-Omni](LICENSES/Hunyuan3D-Omni-LICENSE.txt) and [Hunyuan3D-2.1](LICENSES/Hunyuan3D-2.1-LICENSE.txt) community licences — non-commercial; the 2.1 agreement does not apply in the EU, UK and South Korea |
-| `inference.py`, `scripts/`, `configs/` | written for this project; bound by the upstream terms above, since they only exist to drive that code |
-| Released weights | derived from `facebook/VGGT-1B` and `tencent/Hunyuan3D-Omni`, so the same upstream terms apply |
-
-Vendored files keep their original copyright headers; the ones modified for RecGen3D say
-so under that header. Third-party notices are in `LICENSES/*-NOTICE.txt`.
-
 ## Acknowledgements
 
 This project builds on [VGGT](https://github.com/facebookresearch/vggt) and
