@@ -1,0 +1,84 @@
+{
+  "infer_list": [
+    {
+      "name": "gso-balancing-cactus",
+      "folder_path": "gso-balancing-cactus",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "gso-fishing-game",
+      "folder_path": "gso-fishing-game",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "gso-fruit-veggie-domino",
+      "folder_path": "gso-fruit-veggie-domino",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "gso-toaster-4slice",
+      "folder_path": "gso-toaster-4slice",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "toys4k-dragon-orange",
+      "folder_path": "toys4k-dragon-orange",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "toys4k-dragon-white",
+      "folder_path": "toys4k-dragon-white",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "toys4k-fries",
+      "folder_path": "toys4k-fries",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    },
+    {
+      "name": "toys4k-octopus",
+      "folder_path": "toys4k-octopus",
+      "image_names": [
+        "view_00.png",
+        "view_01.png",
+        "view_02.png",
+        "view_03.png"
+      ]
+    }
+  ]
+}

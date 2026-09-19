@@ -108,6 +108,14 @@ export HF_HOME=$PWD/pretrained_weights
 
 ## Quick Start
 
+The fastest check that everything works is a bundled example — no images of your own
+needed (see [Examples](#examples)):
+
+```bash
+bash scripts/prepare_examples.sh
+MANIFEST=examples/select.json bash scripts/run_examples.sh
+```
+
 Generate a mesh from your own unposed, background-removed views:
 
 ```bash
@@ -131,8 +139,8 @@ Each run writes into `outputs/<name>/`:
 | `canonical_points.ply` | the 4096-point Stage-1 canonical point cloud that conditions generation |
 | `glbscene_stage1_pointmap.glb` | the full Stage-1 reconstruction, with `--save_intermediate` |
 
-To run a list of objects instead of one, pass a manifest — that is what the bundled
-examples use:
+To run a list of objects instead of one, pass a manifest — that is what the
+[bundled examples](#examples) use:
 
 ```bash
 python inference.py --ckpt ... --examples examples/full.json --data_root examples/data \
@@ -177,6 +185,15 @@ the images (35 MB) are downloaded from
 ```bash
 bash scripts/prepare_examples.sh    # download + unpack into examples/data/
 bash scripts/run_examples.sh        # all 27 examples -> outputs/examples/
+```
+
+A second archive holds the 8 synthetic objects from the GSO and Toys4k benchmarks that
+appear in the paper's figures — 4 rendered views each, already background-free:
+
+```bash
+ARCHIVE_NAME=recgen3d-paper-samples.zip MANIFEST=examples/paper-samples.json \
+    bash scripts/prepare_examples.sh
+MANIFEST=examples/paper-samples.json bash scripts/run_examples.sh
 ```
 
 Run a subset, or a different manifest — `examples/select.json` holds a single object,

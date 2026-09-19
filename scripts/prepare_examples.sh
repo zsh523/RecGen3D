@@ -3,6 +3,8 @@
 #
 #   bash scripts/prepare_examples.sh                 # download, then unpack
 #   bash scripts/prepare_examples.sh path/to/zip     # unpack a local archive
+#   ARCHIVE_NAME=recgen3d-paper-samples.zip bash scripts/prepare_examples.sh
+#                                                    # the GSO / Toys4k benchmark objects
 #
 # The archive holds the 27 multi-view sets used for the qualitative results,
 # one folder of background-removed views per object.
@@ -11,11 +13,12 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DATA_DIR="${DATA_DIR:-${REPO_ROOT}/examples/data}"
-ARCHIVE_URL="${ARCHIVE_URL:-https://huggingface.co/datasets/zsh523/RecGen3D-examples/resolve/main/recgen3d-examples.zip}"
+ARCHIVE_NAME="${ARCHIVE_NAME:-recgen3d-examples.zip}"
+ARCHIVE_URL="${ARCHIVE_URL:-https://huggingface.co/datasets/zsh523/RecGen3D-examples/resolve/main/${ARCHIVE_NAME}}"
 
 ARCHIVE="${1:-}"
 if [ -z "${ARCHIVE}" ]; then
-  ARCHIVE="${REPO_ROOT}/examples/recgen3d-examples.zip"
+  ARCHIVE="${REPO_ROOT}/examples/${ARCHIVE_NAME}"
   if [ ! -f "${ARCHIVE}" ]; then
     echo "--- downloading example data ---"
     echo "    ${ARCHIVE_URL}"
@@ -44,5 +47,6 @@ mkdir -p "${DATA_DIR}"
 unzip -q -o "${ARCHIVE}" -d "${DATA_DIR}"
 
 echo "--- verifying against examples/full.json ---"
+MANIFEST="${MANIFEST:-${REPO_ROOT}/examples/full.json}"
 python "${REPO_ROOT}/scripts/check_examples.py" \
-  --examples "${REPO_ROOT}/examples/full.json" --data_root "${DATA_DIR}"
+  --examples "${MANIFEST}" --data_root "${DATA_DIR}"
